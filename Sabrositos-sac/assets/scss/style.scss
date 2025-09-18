@@ -1,0 +1,72 @@
+// Sabrositos SAC - SCSS
+$brand-dark: #0f172a;
+$brand-warning: #ffc107;
+$brand-accent: #ffedd5;
+$text-body: #1f2937;
+
+// Mixin
+@mixin card-shadow($level: 12px) {
+  box-shadow: 0 2px $level rgba(0,0,0,.08);
+  border-radius: 1rem;
+}
+
+// Base
+:root { --sab-radius: 1rem; }
+
+body {
+  color: $text-body;
+  background: #f8fafc;
+}
+
+// Layout principal con CSS Grid
+.layout-grid {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+// Hero
+.hero {
+  @include card-shadow(18px);
+  background: linear-gradient(135deg, $brand-dark, #1f2937);
+  color: white;
+
+  .btn { @include card-shadow(10px); }
+}
+
+.hero-image {
+  min-height: 260px;
+  background-image: url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+// Tarjetas
+.sab-card { @include card-shadow(); border: 0 !important; }
+
+.sab-feature {
+  transition: transform .15s ease, box-shadow .15s ease;
+  &:hover { transform: translateY(-2px); @include card-shadow(18px); }
+}
+
+// Rutas (SPA)
+.route-section { animation: fade .18s ease-in; }
+@keyframes fade {
+  from { opacity: .3; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// Menú (cards)
+#cardsMenu .card {
+  border-radius: var(--sab-radius);
+  .price { font-weight: 700; }
+  .badge { font-size: .75rem; }
+}
+
+// Footer
+footer a { text-decoration: none; }
+
+// Responsivo
+@media (max-width: 768px) {
+  .hero .display-5 { font-size: 1.9rem; }
+}
