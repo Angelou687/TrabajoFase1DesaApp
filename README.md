@@ -56,9 +56,3 @@ Este proyecto es una **Single Page Application (SPA)** que permite:
 - **Variables**: colores principales y texto.  
 - **Anidación**: estilos dentro de `.hero`, `.sab-card`, etc.  
 - **Mixin**: `card-shadow()` para reutilizar sombras en tarjetas.  
-
-### Cómo compilar (opcional)
-Si deseas editar el `.scss` y generar el `.css` automáticamente:
-```bash
-npm i -g sass
-sass --watch assets/scss/style.scss assets/css/style.css
